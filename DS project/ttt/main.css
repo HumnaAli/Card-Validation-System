@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@302;500;695&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Comfortaa';
+}
+body{
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/ss.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    position: relative;
+	  z-index: 1;
+}
+body::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.3;
+	z-index: -1;
+}
+
+
+ul li.active a{
+  background-color:#fff;
+  color: #000;
+}
+ h1{
+    color: rgb(105, 215, 162);
+    margin-left: 150pt;
+    font-size: 50px;
+    left: 240px;
+    position: relative;
+    top: 200px;
+   
+    
+    
+}
+
+  .container{
+    text-align: center;
+    margin-top: 300px;
+    position: relative;
+    top: -100px;
+  }
+  .btn{
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    transition: 0.3s ease background-color;
+    transition-property: color, background-color, border;
+  }
+  .btn a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 20px 20px;
+    border: 1px solid transparent;
+    font-family: 'Comfortaa';
+  }
+  .btn a:hover{
+      color: #fff;
+  }

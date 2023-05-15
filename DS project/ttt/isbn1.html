@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ISBN Checker</title>
+  <link rel="stylesheet"  href="isbn.css">
+</head>
+<body>
+  <h1>ISBN Checker</h1>
+  <form>
+    <label>Enter ISBN:</label>
+    <input type="text" id="isbn" placeholder="Enter ISBN number" >
+    <button type="button" onclick="checkISBN()">Check</button>
+  </form>
+  <p id="result"></p>
+  <script>
+    function checkISBN() {
+        let isbn = document.getElementById("isbn").value;
+        let result = document.getElementById("result");
+
+        if (isValid(isbn)) {
+            result.innerHTML = "Valid ISBN";
+        } else {
+            result.innerHTML = "Invalid ISBN";
+        }
+    }
+
+    function isValid(isbn) {
+      var regex = '^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$';
+
+      if (isbn.match(regex)) {
+          return true;
+      } else {
+          return false;
+      }
+
+    }
+  </script>
+</body>
+</html>

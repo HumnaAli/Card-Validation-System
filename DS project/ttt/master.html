@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MASTER CARD Checker</title>
+  <link rel="stylesheet"  href="master.css">
+</head>
+<body>
+    <h1>MASTER CARD CHECKER</h1>
+    <form>
+        <label>Card Number:</label>
+        <input type="text" id="cardNumber">
+        <button type="button" onclick="validateCard()">Check</button>
+    </form>
+    <p id="result"></p>
+    
+    <script>
+        function validateCard() {
+            var cardNumber = document.getElementById("cardNumber").value;
+            let result = document.getElementById("result");
+            var firstDigit = cardNumber.charAt(0);
+            var cardNumberLength = cardNumber.length;
+            var sum = 0;
+            var isSecond = false;
+
+            if(firstDigit != '5') {
+                result.innerHTML = "Invalid Card Type: Not a Master card";
+                return false;
+            }
+            for (var i = cardNumberLength - 1; i >= 0; i--) {
+                var digit = parseInt(cardNumber.charAt(i));
+                if (isSecond == true) digit *= 2;
+                if (digit > 9) digit -= 9;
+                sum += digit;
+                isSecond = !isSecond;
+            }
+            if (sum % 10 == 0) {
+                result.innerHTML = "Valid Master Card";
+                
+                return true;
+            } else {
+                result.innerHTML = "Invalid Master Card";
+    
+                return false;
+            }
+        }
+    </script>
+</body>
